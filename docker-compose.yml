@@ -1,0 +1,21 @@
+version: '3'  # Versão do formato do Docker Compose
+
+services:
+  web:  # Serviço para o servidor web (Nginx)
+    image: nginx:latest  # Imagem Docker a ser utilizada
+    ports:
+      - "80:80"  # Mapeamento da porta do host para a porta do container
+
+  db:  # Serviço para o banco de dados (MySQL)
+    image: mysql:latest  # Imagem Docker do MySQL
+    environment:  # Variáveis de ambiente para configurar o banco de dados
+      MYSQL_ROOT_PASSWORD: examplepass
+      MYSQL_DATABASE: exampledb
+      MYSQL_USER: exampleuser
+      MYSQL_PASSWORD: examplepass
+
+#git teste
+#Neste exemplo, temos dois serviços: web e db. O serviço web utiliza a imagem oficial do Nginx e 
+#mapeia a porta 80 do host para a porta 80 do container. 
+#O serviço db utiliza a imagem oficial do MySQL e define algumas variáveis de ambiente para configurar 
+#o banco de dados (senha do root, nome do banco, usuário e senha).
