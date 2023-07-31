@@ -9,12 +9,12 @@ services:
   db:  # Serviço para o banco de dados (MySQL)
     image: mysql  # Imagem Docker do MySQL
     environment:  # Variáveis de ambiente para configurar o banco de dados
-      MYSQL_ROOT_PASSWORD: "your_password"examplepass
+      MYSQL_ROOT_PASSWORD: "your_password"
       MYSQL_DATABASE: "crud_db"
       #MYSQL_USER: exampleuser
       #MYSQL_PASSWORD: examplepass
      volumes:
-       -./db:/docker-entrypoint-initdb.d/
+       - ./db:/docker-entrypoint-initdb.d/
 #git teste
 #Neste exemplo, temos dois serviços: web e db. O serviço web utiliza a imagem oficial do Nginx e 
 #mapeia a porta 80 do host para a porta 80 do container. 
