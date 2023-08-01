@@ -1,22 +1,16 @@
-version: '3'  # Versão do formato do Docker Compose
+version: '3'  
 
 services:
-  web:  # Serviço para o servidor web (Nginx)
-    image: .  # Imagem Docker a ser utilizada
+  web:  
+    image: .  
     ports:
-      - "81:5000"  # Mapeamento da porta do host para a porta do container
+      - "81:5000"  
 
-  db:  # Serviço para o banco de dados (MySQL)
-    image: mysql  # Imagem Docker do MySQL
-    environment:  # Variáveis de ambiente para configurar o banco de dados
+  db:  
+    image: mysql  
+    environment: 
       MYSQL_ROOT_PASSWORD: "your_password"
       MYSQL_DATABASE: "crud_db"
-      #MYSQL_USER: exampleuser
-      #MYSQL_PASSWORD: examplepass
-     volumes:
+    volumes:
        - ./db:/docker-entrypoint-initdb.d/
-#git teste
-#Neste exemplo, temos dois serviços: web e db. O serviço web utiliza a imagem oficial do Nginx e 
-#mapeia a porta 80 do host para a porta 80 do container. 
-#O serviço db utiliza a imagem oficial do MySQL e define algumas variáveis de ambiente para configurar 
-#o banco de dados (senha do root, nome do banco, usuário e senha).
+
