@@ -1,4 +1,5 @@
 USE crud_db;
+GRANT ALL PRIVILEGES on crud_db.* TO 'root'@'*'
 CREATE TABLE IF NOT EXISTS users (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
